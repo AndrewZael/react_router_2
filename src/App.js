@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/style.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './views/Home';
+import Pokemons from './views/Pokemons'; 
+import DetailPokemon from './views/DetailPokemon';
+import Menu from './components/Menu';
+import PokemonContext from './context/PokemonContext';
 
 function App() {
+
+  const BASE_URL = 'https://pokeapi.co/api/v2/pokemon';
+  const sharedState = {
+    BASE_URL
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PokemonContext.Provider value={sharedState}>
+        <BrowserRouter>
+          <Menu />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/pokemons' element={<Pokemons />} />
+            <Route path='/pokemons/:idPokemon' element={<DetailPokemon />} />
+          </Routes>
+        </BrowserRouter>
+      </PokemonContext.Provider>
     </div>
   );
 }
