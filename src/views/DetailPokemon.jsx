@@ -6,7 +6,6 @@ import preload from '../assets/img/preloader.gif';
 
 export const DetailPokemon = () => {
 
-  const BASE_URL_IMGS = '../assets/img/'
   const { BASE_URL } = useContext(PokemonContext);
   const { idPokemon } = useParams();
   const [pokemon, setPokemon] = useState({});

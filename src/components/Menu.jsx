@@ -6,7 +6,6 @@ const Menu = () => {
     { to: '/', label: 'Home' },
     { to: '/pokemons', label: 'Pokemons' }
   ];
-  const setActiveClass = ({ isActive }) => isActive ? "link-active" : undefined;
   return (
     <nav className="z-2 p-2 position-relative">
         <ul className="list-unstyled m-0 p-0 d-flex justify-content-end gap-2">

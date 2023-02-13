@@ -22,7 +22,7 @@ const Pokemons = () => {
 
   useEffect(() => {
     getListPokemons();
-  },[setListPokemons]);
+  },[]);
 
   return (
     <section title="Pokemons" className="col-12 col-md-8 col-xl-6 col-xxl-5 z-1 position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column align-items-center text-center justify-content-center min-vh-100 m-auto px-4">
