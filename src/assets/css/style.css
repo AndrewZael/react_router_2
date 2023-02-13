@@ -60,6 +60,18 @@ body{
     filter: blur(100px);
     opacity: .6;
 }
+#btn-close-back{
+    top: -10px;
+    right: -10px;
+}
+#badge-pokemon{
+    width: 90px;
+    bottom: 1rem;
+    right: 1rem;
+}
+#badge-pokemon img{
+    
+}
 nav ul li a{
     color: var(--white);
 }
@@ -85,14 +97,18 @@ nav ul li a:hover,
     bottom: -2rem;
     width: 45%;
 }
+.bg-cover{
+    background-size: cover;
+}
+.bg-auto{
+    background-size: auto 90%;
+}
 .bg{
    background-repeat: no-repeat;
    background-position: center;
-   background-size: cover; 
 }
-.z-1{
-    z-index: 1;
-}
+.z-1{ z-index: 1; }
+.z-2{ z-index: 2; }
 .btn-special{
     border: .4rem solid var(--white);
     font-size: 2rem;
