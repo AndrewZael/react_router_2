@@ -19,6 +19,7 @@ function App() {
       <PokemonContext.Provider value={sharedState}>
         <BrowserRouter>
           <Menu />
+          <div aria-hidden="true" id="layer" className="position-fixed top-0 start-0 min-vh-100 w-100"></div>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/pokemons' element={<Pokemons />} />

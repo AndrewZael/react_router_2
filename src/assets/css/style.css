@@ -1,0 +1,98 @@
+:root{
+    --orange: #ff9700;
+    --blue: #0097d0;
+    --white: #ffffff;
+    --red: #dc3545;
+}
+body{
+    background-image: url('../img/place.jpg');
+    min-height: 100vh;
+}
+/*Charizad*/
+@keyframes ltr {
+    from { left: -45%; }
+    to { left: -15%; }
+}
+@keyframes moveltr {
+    0% { left: -15%; }
+    50% { left: -5%; }
+    100% { left: -15%; }
+}
+@keyframes powerOrange {
+    from { filter: drop-shadow(0 0 30px var(--orange)); }
+    to { filter: drop-shadow(0 0 50px var(--orange)); }
+}
+/*Charizad*/
+
+/*Blastoise*/
+@keyframes rtl {
+    from { right: -45%; }
+    to { right: -18%; }
+}
+@keyframes movertl {
+    0% { right: -18%; }
+    50% { right: -10%; }
+    100% { right: -18%; }
+}
+@keyframes powerBlue {
+    from { filter: drop-shadow(0 0 30px var(--blue)); }
+    to { filter: drop-shadow(0 0 50px var(--blue)); }
+}
+/*Blastoise*/
+
+/*logo Pokemon*/
+@keyframes scaleLogo {
+    0%{ transform: scale(0); }
+    50%{ transform: scale(1.5); }
+    75%{ transform: scale(0.9); }
+    100%{ transform: scale(1); }
+}
+/*logo Pokemon*/
+
+#pokemon-enter{
+    height: 165px;
+    transform: scale(0);
+    animation: scaleLogo 600ms ease-in-out 1.5s 1 normal forwards;
+}
+#pokemon-enter button{
+    border: .4rem solid var(--white);
+    font-size: 2.5rem;
+}
+#layer{
+    background-color: var(--white);
+    filter: blur(100px);
+    opacity: .6;
+}
+nav{
+    z-index: 1;
+}
+nav ul li a{
+    color: var(--white);
+}
+nav ul li a:hover,
+.link-active{
+    background-color: var(--red);
+    color: var(--white);
+}
+.pokemon-start{
+    left: -45%;
+    animation: ltr 500ms ease 500ms forwards, 
+    moveltr 30s linear 1s infinite,
+    powerOrange 1s ease-in-out 500ms infinite alternate-reverse;
+}
+.pokemon-end{
+    right: -45%;
+    animation: rtl 500ms ease 500ms forwards, 
+    movertl 30s linear 1s infinite,
+    powerBlue 1s ease-in-out 500ms infinite alternate-reverse;
+}
+.pokemon-start,
+.pokemon-end{
+    bottom: -2rem;
+    width: 45%;
+}
+.bg{
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover; 
+}
