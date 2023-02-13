@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import PokemonContext from '../context/PokemonContext';
+import preload from '../assets/img/preloader.gif';
 
 export const DetailPokemon = () => {
 
@@ -28,6 +29,14 @@ export const DetailPokemon = () => {
   return (
     <section className="z-1 position-absolute top-0 w-100 min-vh-100 d-flex align-items-center">
       <article className="position-relative row col-11 col-lg-10 col-xl-8 col-xxl-6 p-3 mx-auto bg-light rounded shadow-lg">
+
+        {JSON.stringify(pokemon) === '{}' ?
+
+        <div className="p-5 d-flex flex-column align-items-center">
+          <img src={preload} alt="Pikachu caminando con celular" className="mb-3" />
+          <small>Por favor espera.</small>
+        </div> : 
+        <>
         <button id="btn-close-back" onClick={() => back(-1)} 
         className="btn btn-danger fw-bold rounded-circle position-absolute w-auto fredoka">
           X
@@ -69,6 +78,8 @@ export const DetailPokemon = () => {
           </figure> : null
           }
         </div>
+        </>
+        }
       </article>
     </section>
   )
