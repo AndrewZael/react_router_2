@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="min-vh-100">
       <PokemonContext.Provider value={sharedState}>
         <BrowserRouter>
           <Menu />

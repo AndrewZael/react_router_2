@@ -8,7 +8,7 @@ const Menu = () => {
   ];
   const setActiveClass = ({ isActive }) => isActive ? "link-active" : undefined;
   return (
-    <nav className="p-2 position-relative">
+    <nav className="z-1 p-2 position-relative">
         <ul className="list-unstyled m-0 p-0 d-flex justify-content-end gap-2">
             {
               menu.map(item => (
