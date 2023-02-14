@@ -10,7 +10,6 @@ export const DetailPokemon = () => {
   const { idPokemon } = useParams();
   const [pokemon, setPokemon] = useState({});
   const back = useNavigate();
-
   const getPokemon = async () => {
     const getDataPokemon = await fetch(`${BASE_URL}/${idPokemon}`);
     const dataPokemon = await getDataPokemon.json();
@@ -38,7 +37,7 @@ export const DetailPokemon = () => {
 
         {JSON.stringify(pokemon) === '{}' ?
 
-        <div className="p-5 d-flex flex-column align-items-center">
+        <div className="p-5 d-flex flex-column align-items-center justify-content-center">
           <img src={preload} alt="Pikachu caminando con celular" className="mb-3" />
           <small>Por favor espera.</small>
         </div> : 
@@ -48,7 +47,7 @@ export const DetailPokemon = () => {
           <img
             src={pokemon.sprites?.other.dream_world.front_default} 
             alt={pokemon.name} 
-            className="w-100 p-4" />
+            className="w-75 mx-auto py-4 px-3" />
             { pokemon.types !== undefined ?
             <figure id="badge-pokemon" className="position-absolute m-0 p-0">
               <img src={require(`../assets/img/types/${pokemon.types[0].type.name}.svg`)} alt={pokemon.types !== undefined ? pokemon?.types[0]?.type?.name : 'Insignia'} className="w-100 h-100 rounded-circle bg-light border p-2 mb-1"/>

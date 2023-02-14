@@ -11,7 +11,7 @@ const Home = () => {
       <img src={charizad} alt="Charizad" className="position-fixed pokemon-start" />
       <img src={blastoise} alt="Blastoise" className="position-fixed pokemon-end" />
       <div id="pokemon-enter" className="position-fixed start-0 end-0 top-0 bottom-0 w-75 d-flex flex-column align-items-center gap-3 m-auto">
-        <img src={logoPokemon} alt="Pokemon" width="600" />
+        <img src={logoPokemon} alt="Pokémon Trade Mark" width="600" />
         <button onClick={() => pathPokemons('/pokemons')} className="btn btn-special rounded-pill shadow fw-bold btn-danger px-5">INGRESAR</button>
       </div>
     </section>

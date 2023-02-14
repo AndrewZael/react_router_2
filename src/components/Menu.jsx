@@ -7,7 +7,8 @@ const Menu = () => {
     { to: '/pokemons', label: 'Pokemons' }
   ];
   return (
-    <nav className="z-2 p-2 position-relative">
+    <header className="z-2 p-2 position-relative">
+    <nav>
         <ul className="list-unstyled m-0 p-0 d-flex justify-content-end gap-2">
             {
               menu.map(item => (
@@ -20,6 +21,7 @@ const Menu = () => {
             }
         </ul>
     </nav>
+    </header>
   )
 }
 

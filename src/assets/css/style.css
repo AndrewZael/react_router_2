@@ -94,7 +94,7 @@ body{
     right: 1rem;
 }
 #wrap-pokemon{
-    height: 77vh;
+    height: 70vh;
     overflow-x: hidden!important;
 }
 nav ul li a{
@@ -174,5 +174,10 @@ nav ul li a:hover,
         animation: rtl 500ms ease 500ms forwards, 
         movertl 30s linear 1s infinite,
         powerBlue 1s ease-in-out 500ms infinite alternate-reverse;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #pokemon-enter img{
+        width: 600px;
     }
 }
