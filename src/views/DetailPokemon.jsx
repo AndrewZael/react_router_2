@@ -27,8 +27,14 @@ export const DetailPokemon = () => {
   },[]);
 
   return (
-    <section className="z-1 position-absolute top-0 w-100 min-vh-100 d-flex align-items-center">
-      <article className="position-relative row col-11 col-lg-10 col-xl-8 col-xxl-6 p-3 mx-auto bg-light rounded shadow-lg">
+    <section className="z-1 position-absolute top-0 w-100 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+      <div id="wrap-btn-close-back" className="position-relative z-1 col-11 col-lg-10 col-xl-8 col-xxl-6">
+        <button id="btn-close-back" onClick={() => back(-1)} 
+        className="btn btn-danger fw-bold rounded-circle fredoka z-1 d-flex">
+          {'<'}
+          </button>
+      </div>
+      <article id="wrap-pokemon" className="position-relative row col-11 col-lg-10 col-xl-8 col-xxl-6 p-3 mx-auto bg-light rounded shadow-lg overflow-auto">
 
         {JSON.stringify(pokemon) === '{}' ?
 
@@ -37,16 +43,18 @@ export const DetailPokemon = () => {
           <small>Por favor espera.</small>
         </div> : 
         <>
-        <button id="btn-close-back" onClick={() => back(-1)} 
-        className="btn btn-danger fw-bold rounded-circle position-absolute w-auto fredoka">
-          X
-        </button>
         <div
-        className="col-12 col-md-8 px-0 rounded border border-info overflow-hidden bg bg-auto d-flex">
+        className="col-12 col-md-8 px-0 rounded border border-info overflow-hidden bg bg-auto d-flex position-relative">
           <img
             src={pokemon.sprites?.other.dream_world.front_default} 
             alt={pokemon.name} 
             className="w-100 p-4" />
+            { pokemon.types !== undefined ?
+            <figure id="badge-pokemon" className="position-absolute m-0 p-0">
+              <img src={require(`../assets/img/types/${pokemon.types[0].type.name}.svg`)} alt={pokemon.types !== undefined ? pokemon?.types[0]?.type?.name : 'Insignia'} className="w-100 h-100 rounded-circle bg-light border p-2 mb-1"/>
+              <figcaption className="bg-white rounded text-uppercase text-center fw-bold">{pokemon.types[0].type.name}</figcaption>
+            </figure> : null
+            }
         </div>
         <div className="row mx-0 col-12 col-md-4 px-0 ps-md-3 mt-4 mt-md-0 align-content-start h-100">
           <div className="col-12 col-sm-6 col-md-12 mb-4">
@@ -62,7 +70,7 @@ export const DetailPokemon = () => {
             </ul>
           </div>
           <div className="col-12 col-sm-6 col-md-12">
-            <h2 className="fredoka text-info">Tipos</h2>
+            <h2 className="fredoka text-info">Tipo</h2>
             <ul className="mt-3">
               {
                 pokemon.types?.map(t => (
@@ -71,12 +79,6 @@ export const DetailPokemon = () => {
               }
             </ul>
           </div>
-          { pokemon.types !== undefined ?
-          <figure id="badge-pokemon" className="position-absolute bg-light m-0 p-0">
-            <img src={require(`../assets/img/types/${pokemon.types[0].type.name}.svg`)} alt={pokemon.types !== undefined ? pokemon?.types[0]?.type?.name : 'Insignia'} className="w-100 h-100 rounded-circle border p-2 mb-1"/>
-            <figcaption className="text-uppercase text-center fw-bold">{pokemon.types[0].type.name}</figcaption>
-          </figure> : null
-          }
         </div>
         </>
         }

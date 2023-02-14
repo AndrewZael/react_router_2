@@ -3,11 +3,28 @@
     --orange: #ff9700;
     --blue: #0097d0;
     --white: #ffffff;
+    --light:#f4f4f4;
     --red: #dc3545;
+    --gray: #888888;
+    --dark-gray: #555555;
 }
 body{
     background-image: url('../img/place.jpg');
     min-height: 100vh;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--light);
+    border-radius: 50rem;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 50rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-gray);
 }
 /*Charizad*/
 @keyframes ltr {
@@ -51,26 +68,34 @@ body{
 /*logo Pokemon*/
 
 #pokemon-enter{
-    height: 165px;
     transform: scale(0);
-    animation: scaleLogo 600ms ease-in-out 1.5s 1 normal forwards;
+    animation: scaleLogo 600ms ease-in-out 1 normal forwards;
+    top: 70px!important;
+}
+#pokemon-enter img{
+    width: 310px;
 }
 #layer{
     background-color: var(--white);
     filter: blur(100px);
     opacity: .6;
 }
+#wrap-btn-close-back{
+    top: 25px;
+    left: -8px;
+}
 #btn-close-back{
-    top: -10px;
-    right: -10px;
+    width: 38px;
+    height: 38px;
 }
 #badge-pokemon{
     width: 90px;
     bottom: 1rem;
     right: 1rem;
 }
-#badge-pokemon img{
-    
+#wrap-pokemon{
+    height: 77vh;
+    overflow-x: hidden!important;
 }
 nav ul li a{
     color: var(--white);
@@ -81,21 +106,15 @@ nav ul li a:hover,
     color: var(--white);
 }
 .pokemon-start{
-    left: -45%;
-    animation: ltr 500ms ease 500ms forwards, 
-    moveltr 30s linear 1s infinite,
-    powerOrange 1s ease-in-out 500ms infinite alternate-reverse;
+    left: -35%;
 }
 .pokemon-end{
-    right: -45%;
-    animation: rtl 500ms ease 500ms forwards, 
-    movertl 30s linear 1s infinite,
-    powerBlue 1s ease-in-out 500ms infinite alternate-reverse;
+    right: -35%;
 }
 .pokemon-start,
 .pokemon-end{
     bottom: -2rem;
-    width: 45%;
+    width: 100%;
 }
 .bg-cover{
     background-size: cover;
@@ -124,4 +143,36 @@ nav ul li a:hover,
 }
 .text-shadow{
     text-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+@media screen and (min-width: 620px) {
+    #pokemon-enter{
+        height: 236px;
+    }
+    #pokemon-enter img{
+        width: 400px;
+    }
+    #pokemon-enter{
+        animation-delay: 1.5s;
+    }
+    #wrap-btn-close-back{
+        left: -15px;
+    }
+    .pokemon-start, 
+    .pokemon-end{
+        bottom: -2rem;
+        width: 45%;
+    }
+    .pokemon-start{
+        left: -45%;
+        animation: ltr 500ms ease 500ms forwards, 
+        moveltr 30s linear 1s infinite,
+        powerOrange 1s ease-in-out 500ms infinite alternate-reverse;
+    }
+    .pokemon-end{
+        right: -45%;
+        animation: rtl 500ms ease 500ms forwards, 
+        movertl 30s linear 1s infinite,
+        powerBlue 1s ease-in-out 500ms infinite alternate-reverse;
+    }
 }
